@@ -6,10 +6,11 @@ const allData = () => {
 };
 
 const showData = (singleData) => {
-  console.log(singleData);
+  // console.log(singleData);
   const parants = document.getElementById("parants-div");
   singleData.tools.forEach((totalData) => {
     const div = document.createElement("div");
+
     div.classList.add("col");
     div.innerHTML = `
      <div class="card h-100">
@@ -22,11 +23,15 @@ const showData = (singleData) => {
               <li>${totalData.features[1]}</li>
               <li>${totalData.features[3]}</li>
               </ol>
-              <hr>
-            <h5 style="color: cyan;">${totalData.name}</h5>
-            <p><i style="color: cyan;"  class="fa-regular fa-calendar-days"></i>
-            ${totalData.published_in}</p>
+              
             
+            
+            <div class="card-footer">
+        <small class="text-muted">
+        <h5 style="color: cyan;">${totalData.name}</h5>
+        <p><i style="color: cyan;"  class="fa-regular fa-calendar-days"></i>
+            ${totalData.published_in}</p></small>
+      </div>
             </div>
           </div>
     `;
