@@ -6,7 +6,7 @@ const allData = () => {
 };
 
 const showData = (singleData) => {
-  console.log(singleData);
+  // console.log(singleData);
   const parants = document.getElementById("parants-div");
   singleData.tools.forEach((totalData) => {
     const div = document.createElement("div");
@@ -34,7 +34,7 @@ const showData = (singleData) => {
             ${totalData.published_in}</p>
         </div>
         <div>
-        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button onclick="modalData('${totalData.id}')" type="button" class="rounded-circle btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <i class="fa-solid fa-angles-right"></i>
       </button>
         </div>
@@ -59,7 +59,11 @@ const toggleSpinner = (isLoading) => {
 };
 
 // Modal start
-const modal = () => {
-  document.getElementById("exampleModal");
+const modalData = (tools_id) => {
+  const url = `https://openapi.programming-hero.com/api/ai/tool/${tools_id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => console.log(data.data));
 };
+
 allData();
