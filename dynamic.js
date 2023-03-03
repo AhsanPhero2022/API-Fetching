@@ -6,7 +6,7 @@ const allData = () => {
 };
 
 const showData = (singleData) => {
-  // console.log(singleData);
+  console.log(singleData);
   const parants = document.getElementById("parants-div");
   singleData.tools.forEach((totalData) => {
     const div = document.createElement("div");
@@ -27,10 +27,19 @@ const showData = (singleData) => {
             
             
             <div class="card-footer">
-        <small class="text-muted">
+        <small class="text-muted d-flex justify-content-between">
+        <div>
         <h5 style="color: cyan;">${totalData.name}</h5>
         <p><i style="color: cyan;"  class="fa-regular fa-calendar-days"></i>
-            ${totalData.published_in}</p></small>
+            ${totalData.published_in}</p>
+        </div>
+        <div>
+        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-angles-right"></i>
+      </button>
+        </div>
+        </small>
+        
       </div>
             </div>
           </div>
@@ -49,4 +58,8 @@ const toggleSpinner = (isLoading) => {
   }
 };
 
+// Modal start
+const modal = () => {
+  document.getElementById("exampleModal");
+};
 allData();
