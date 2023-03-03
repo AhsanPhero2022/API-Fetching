@@ -63,7 +63,28 @@ const modalData = (tools_id) => {
   const url = `https://openapi.programming-hero.com/api/ai/tool/${tools_id}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => console.log(data.data));
+    .then((data) => modalInformation(data.data));
 };
 
+const modalInformation = (modalInfo) => {
+  // console.log(modalInfo);
+
+  const parant = document.getElementById("modal-info");
+  const firstDiv = document.createElement("div");
+  firstDiv.innerHTML = `
+  <h2>${modalInfo.description ? modalInfo.description : "data is not yet"}</h2>
+  `;
+  parant.appendChild(firstDiv);
+  const imgParant = document.getElementById("modal-img");
+
+  const div = document.createElement("div");
+  div.innerHTML = `
+  <img class="img-fluid" src="${modalInfo.image_link[0]}" alt="">
+  `;
+  imgParant.appendChild(div);
+};
 allData();
+
+const modalDelete = () => {
+  document.getElementById("modalBody").innerHTML = "" ? "" : "no data yet";
+};

@@ -34,26 +34,24 @@
 
     <!-- Modal start -->
     <section>
-      <!-- Vertically centered modal -->
-      <!-- Button trigger modal -->
+
 
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn btn-outline-info rounded-circle btn-close" data-bs-dismiss="modal"
-                aria-label="Close"></button>
+            <div class="modal-header ">
+              <button onclick="modalDelete()" type="button" class="btn btn-outline-info rounded-circle btn-close"
+                data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div id="modalBody" class="modal-body">
               <div class="d-flex">
-                <div>
-                  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, modi.</h3>
+                <div id="modal-info">
+
                 </div>
-                <div>
-                  <img src="..." alt="">
+                <div id="modal-img">
+
                 </div>
               </div>
             </div>
