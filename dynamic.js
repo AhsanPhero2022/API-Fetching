@@ -6,7 +6,7 @@ const allData = () => {
 };
 
 const showData = (singleData) => {
-  // console.log(singleData);
+  console.log(singleData);
   const parants = document.getElementById("parants-div");
   singleData.tools.forEach((totalData) => {
     const div = document.createElement("div");
@@ -34,9 +34,9 @@ const showData = (singleData) => {
             ${totalData.published_in}</p>
         </div>
         <div>
-        <button onclick="modalData('${totalData.id}')" type="button" class="rounded-circle btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <label onclick="modalData('${totalData.id}')" for="my-modal-5" class="btn btn-outline btn-info btn-circle btn-xs">
         <i class="fa-solid fa-angles-right"></i>
-      </button>
+        </label>
         </div>
         </small>
         
@@ -63,28 +63,23 @@ const modalData = (tools_id) => {
   const url = `https://openapi.programming-hero.com/api/ai/tool/${tools_id}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => modalInformation(data.data));
+    .then((data) => modalInformation(data.data.id));
 };
 
 const modalInformation = (modalInfo) => {
-  // console.log(modalInfo);
+  console.log(modalInfo);
 
   const parant = document.getElementById("modal-info");
   const firstDiv = document.createElement("div");
   firstDiv.innerHTML = `
-  <h2>${modalInfo.description ? modalInfo.description : "data is not yet"}</h2>
+  <h2>${modalInfo.image}</h2>
   `;
   parant.appendChild(firstDiv);
   const imgParant = document.getElementById("modal-img");
-
   const div = document.createElement("div");
   div.innerHTML = `
-  <img class="img-fluid" src="${modalInfo.image_link[0]}" alt="">
+  <img class="img-fluid" src="${modalInfo.image}" alt="">
   `;
   imgParant.appendChild(div);
 };
 allData();
-
-const modalDelete = () => {
-  document.getElementById("modalBody").innerHTML = "" ? "" : "no data yet";
-};
