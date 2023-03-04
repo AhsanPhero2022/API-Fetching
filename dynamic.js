@@ -165,7 +165,7 @@ const displayUniverDetails = (univer) => {
               <figure><img class="relative" src="${
                 univer.image_link[0]
               }" alt="" />
-              <div id="hidden" class="hidden absolute top-7 right-7">${
+              <div id="hidden" class="rounded bg-green-500 hidden absolute top-7 right-7">${
                 univer.accuracy.score
               }% accuracy</div>
               </figure>
