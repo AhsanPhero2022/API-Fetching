@@ -17,11 +17,16 @@
 
 <body onload="toggleSpinner()">
   <main>
-    <h1 class="text-center my-5">AI Universe Hub</h1>
-
+    <h1 class="text-center my-5 font-bold text-5xl">AI Universe Hub</h1>
+    <div class="text-center m-5">
+      <button id="btn-sort" class="btn btn-info">Short by Date</button>
+    </div>
     <section class="container">
 
       <div id="parants-div" class="row row-cols-1 row-cols-md-3 g-4">
+      </div>
+      <div class="text-center m-5">
+        <button onclick="showAllData()" class="btn btn-info">see more</button>
       </div>
     </section>
 
@@ -40,9 +45,9 @@
 
 
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+      <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class=" modal-dialog">
+          <div class=" modal-content">
             <div class="modal-header ">
               <button type="button" class="btn btn-outline-info rounded-circle btn-close" data-bs-dismiss="modal"
                 aria-label="Close"></button>
@@ -65,7 +70,7 @@
 
       <input type="checkbox" id="universId" class="modal-toggle" />
       <div class="modal">
-        <div class="modal-box w-11/12 max-w-5xl ">
+        <div class="bg-cyan-200 modal-box w-11/12 max-w-5xl ">
           <div class=" modal-action">
             <label for="universId" class="btn btn btn-circle mb-2 ">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -74,7 +79,7 @@
               </svg>
             </label>
           </div>
-          <div id="modal-description" class=" grid lg:grid-cols-2">
+          <div id="modal-description" class=" grid lg:grid-cols-2 gap-4">
 
 
 
