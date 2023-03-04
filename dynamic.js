@@ -67,13 +67,34 @@ const fetchUniversId = async (id) => {
 };
 
 const displayUniverDetails = (univer) => {
-  console.log(univer);
+  console.log(univer.features[1].feature_name);
   document.getElementById("modal-description").innerHTML = `
          
 
             <div class="card w-96 bg-base-100 shadow-xl">
               <div class="card-body">
                 <h2 class="card-title">${univer.description}</h2>
+                <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-3 text-center py-6">
+                <div class="bg-green-500 p-3 rounded-lg">
+                <h3>${
+                  !!univer.pricing ? univer.pricing[1].price : "Free of Cost/"
+                } <br> ${univer.pricing ? univer.pricing[1].plan : "Pro"} </h3>
+                </div>
+                <div class="bg-blue-500 p-3 rounded-lg">
+                <h3>${
+                  !!univer.pricing ? univer.pricing[1].price : "Free of Cost/"
+                } <br> ${univer.pricing ? univer.pricing[1].plan : "Pro"}</h3>
+                </div>
+                <div class="bg-red-500 p-3 rounded-lg">
+                <h3">${
+                  !!univer.pricing
+                    ? univer.pricing[2].price.slice(0, 10)
+                    : "Free of Cost/"
+                } <br> ${
+    univer.pricing ? univer.pricing[2].plan : "Enterprise"
+  }</h3>
+                </div>
+                </div>
                 
               </div>
             </div>
@@ -110,7 +131,7 @@ const displayUniverDetails = (univer) => {
               
               <figure><img src="${univer.image_link}" alt="" /></figure>
               <div class="card-body">
-            <p>${
+            <p class="font-semibold">${
               univer.input_output_examples[0].input
                 ? univer.input_output_examples[0].input
                 : "No! Not Yet! Take a break!!!"
